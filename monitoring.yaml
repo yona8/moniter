@@ -11,8 +11,30 @@ Resources:
       UserData: 
         Fn::Base64: !Sub |
           #!/bin/bash
+          # Use this for your user data (script from top to bottom)
+          # install httpd (Linux 2 version)
           yum update -y
           yum install -y httpd
           systemctl start httpd
-          systemctl enable httpd
+          systemctl enable httpd          
           echo "<h1> Welcome to monitoring demo </h1>" > /var/www/html/index.html
+  #     IamInstanceProfile: my-ec2-role
+  # MyEC2Role:
+  #   Type: 'AWS::IAM::Role'
+  #   Properties:
+  #     AssumeRolePolicyDocument:
+  #       Version: '2012-10-17'
+  #       Statement:
+  #       - Effect: Allow
+  #         Principal:
+  #           Service: ec2.amazonaws.com
+  #         Action: 'sts:AssumeRole'
+  #     Path: '/'
+  #     Policies:
+  #     - PolicyName: MyPolicy
+  #       PolicyDocument:
+  #         Version: '2012-10-17'
+  #         Statement:
+  #         - Effect: Allow
+  #           Action: 's3:GetObject'
+  #           Resource: 'arn:aws:s3:::*'    
