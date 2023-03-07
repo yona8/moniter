@@ -89,4 +89,5 @@ Resources:
         - MetricName: "ApacheAccessCount"
           MetricNamespace: "MyNamespace"
           MetricValue: "1"
+          DefaultValue: "0"
           
