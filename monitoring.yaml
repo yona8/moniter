@@ -36,12 +36,12 @@ Resources:
               Service: ec2.amazonaws.com
             Action: sts:AssumeRole
       Path: "/"      
-      Polices:
-          - PolicyName: "CloudWatchLogsPolicy"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
-              - Effect: "Allow"
+              - Effect: Allow
                 Action:
                   - "logs:CreateLogGroup"
                   - "logs:CreateLogStream"
