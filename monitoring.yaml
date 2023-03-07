@@ -78,3 +78,13 @@ Resources:
               - !Sub "arn:aws:logs:::log-group:${LogGroup}:log-stream:*"
       Roles:
         - !Ref MyInstanceRole
+        
+  MetricFilter:
+    Type: "AWS::Logs::MetricFilter"
+    Properties:
+      LogGroupName: !Ref LogGroup
+      FilterPattern: '[ip, identity, user, timestamp, request, status_code, size]'
+      MetricTransformations:
+        - MetricName: "ApacheAccessCount"
+          MetricNamespace: "MyNamespace"
+          MetricValue: "1"
