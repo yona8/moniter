@@ -28,4 +28,4 @@ jobs:
      
       - name: use cloudformation deploy EC2 instance
         run: |
-          aws cloudformation deploy --template-file /monitoring.yaml --stack-name my-monitoring-demo   
+          aws cloudformation deploy --template-file ./monitoring.yaml --stack-name my-monitoring-demo   
