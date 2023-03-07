@@ -35,19 +35,19 @@ Resources:
             Principal:
               Service: ec2.amazonaws.com
             Action: sts:AssumeRole
-          - Effect: "Allow"
+          - Effect: Allow
             Action:
-              - "logs:CreateLogGroup"
-              - "logs:CreateLogStream"
-              - "logs:PutLogEvents"
+              - logs:CreateLogGroup
+              - logs:CreateLogStream
+              - logs:PutLogEvents
             Resource:
-              - !Sub "arn:aws:logs:::log-group:*
+              - !Sub arn:aws:logs::${AWS::AccountId}:log-group:*
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM
         - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
   
   LogGroup:
-    Type: "AWS::Logs::LogGroup"
+    Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/var/log/httpd/access_log"
 
