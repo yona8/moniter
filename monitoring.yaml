@@ -87,4 +87,5 @@ Resources:
       MetricTransformations:
         - MetricName: "ApacheAccessCount"
           MetricNamespace: "MyNamespace"
-          MetricValue: "COUNT"
+          MetricValue: "$size"
+          MetricNamespace: "MyNamespace"
