@@ -78,7 +78,7 @@ Resources:
               - !Sub "arn:aws:logs:::log-group:${LogGroup}:log-stream:*"
       Roles:
         - !Ref MyInstanceRole
-        
+
   MetricFilter:
     Type: "AWS::Logs::MetricFilter"
     Properties:
@@ -87,4 +87,4 @@ Resources:
       MetricTransformations:
         - MetricName: "ApacheAccessCount"
           MetricNamespace: "MyNamespace"
-          MetricValue: "1"
+          MetricValue: "COUNT"
