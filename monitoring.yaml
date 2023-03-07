@@ -1,0 +1,10 @@
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0692dea0a2f8a1b35 # Replace with your desired Amazon Machine Image (AMI) ID
+      Tags:
+        - Key: Name
+          Value: my-ec2-instance
+      SubnetId: subnet-06b88f16ad53d7f10
