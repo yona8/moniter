@@ -77,4 +77,4 @@ Resources:
             Resource:
               - !Sub "arn:aws:logs:::log-group:${LogGroup}:log-stream:*"
       Roles:
-        - !Ref MyInstanceProfile
+        - !Ref MyInstanceRole
