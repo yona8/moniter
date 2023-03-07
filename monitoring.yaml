@@ -83,9 +83,10 @@ Resources:
     Type: "AWS::Logs::MetricFilter"
     Properties:
       LogGroupName: !Ref LogGroup
-      FilterPattern: '[ip, identity, user, timestamp, request, status_code, size]'
+      FilterName: "EventCount"
+      FilterPattern: " "
       MetricTransformations:
         - MetricName: "ApacheAccessCount"
           MetricNamespace: "MyNamespace"
-          MetricValue: "$size"
-          MetricNamespace: "MyNamespace"
+          MetricValue: "1"
+          
